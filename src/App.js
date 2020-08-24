@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function Helloworld(){
-   return (
-    <div id="hello">Hello World</div>
-  )
-}
+import tasks from './sample/tasks.json';
 
-function App() {
-  return (
-    <div>This is my component: <Helloworld/> <Helloworld/> <Helloworld/> </div>
-  );
+import Tasks from './components/Tasks';
+
+class App extends Component{
+
+  state = {
+    tasks: tasks
+  }
+
+ render(){
+   return  <div>
+     <Tasks tasks={this.state.tasks}/>
+   </div>
+ }
 }
 
 export default App;
